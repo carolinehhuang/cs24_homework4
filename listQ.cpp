@@ -80,6 +80,9 @@ int Queue::getSize() const {
 
 void reverseQueueFirstKElements(int k, Queue& queue){
 	stack<int> s;
+	if ( k > queue.getSize()){
+		k = queue.getSize();
+	}
 	for( int i = 0; i < k; i++){
 		s.push(queue.dequeue());
 	}
