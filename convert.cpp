@@ -44,13 +44,15 @@ string infixToPostfix(char *expression[], int numTokens) {
 			case LEFT:
 				break;
 			case NUMBER: case VARIABLE:
-				output += expression[i] + " ";
+				output += expression[i];
+				output += " ";
 				break;
 			case ADD: case SUBTRACT: case MULTIPLY: case DIVIDE:
 				ops.push(expression[i]);
 				break;
 			case RIGHT:
-				output += ops.top() + " ";
+				output += ops.top();
+				output += " ";
 				ops.pop();
 				break;
 		}
